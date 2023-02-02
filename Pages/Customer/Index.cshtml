@@ -1,0 +1,47 @@
+﻿@page
+@model WebApplication2.Pages.Customer.IndexModel
+@{
+}
+
+<br>
+<h2>List of Customers</h2>
+<a class="btn btn-primary btn-sm" href="/Customer/Create">New Customer</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Int_ID</th>
+            <th>Emp_ID</th>
+            <th>Whatsapp</th>
+            <th>House_no</th>
+            <th>Street</th>
+            <th>Postal_Code</th>
+            <th>Last_Visit</th>
+            <th>Special_Note</th>
+            <th>Order_Placed</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listCus)
+        { 
+        <tr>
+            <td>@item.cus_id</td>
+            <td>@item.cus_name</td>
+            <td>@item.int_id</td>
+            <td>@item.emp_id</td>
+            <td>@item.whatsapp</td>
+            <td>@item.house_no</td>
+            <td>@item.street</td>
+            <td>@item.postal_code</td>
+            <td>@item.last_visit</td>
+            <td>@item.special_note</td>
+            <td>@item.order_placed</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Customer/Edit?id=@item.cus_id">Edit</a>
+                <a class="btn btn-primary btn-sm" href="/Customer/Delete?id=@item.cus_id">Delete</a>
+            </td>
+        </tr>
+        }
+</tbody>
+</table>

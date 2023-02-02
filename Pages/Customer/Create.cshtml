@@ -1,0 +1,93 @@
+﻿@page
+@model WebApplication2.Pages.Customer.CreateModel
+@{
+}
+
+<br>
+<h2>New Customer</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="cus_name" value="@Model.cusInfo.cus_name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Int_ID</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="int_id" value="@Model.cusInfo.int_id">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Emp_ID</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="emp_id" value="@Model.cusInfo.emp_id">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Whatsapp</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="whatsapp" value="@Model.cusInfo.whatsapp">
+        </div>
+    </div>    
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">House_No</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="house_no" value="@Model.cusInfo.house_no">
+        </div>
+    </div>    
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Street</label>
+        <div class="col mb-6">
+            <input type="text" class="form-control" name="street" value="@Model.cusInfo.street">
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Postal_Code</label>
+            <div class="col mb-6">
+                <input type="text" class="form-control" name="postal_code" value="@Model.cusInfo.postal_code">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Last_Visit</label>
+            <div class="col mb-6">
+                <input type="text" class="form-control" name="last_visit" value="@Model.cusInfo.last_visit">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Special_Note</label>
+            <div class="col mb-6">
+                <input type="text" class="form-control" name="special_note" value="@Model.cusInfo.special_note">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Order_Placed</label>
+            <div class="col mb-6">
+                <input type="text" class="form-control" name="order_placed" value="@Model.cusInfo.order_placed">
+            </div>
+        </div>
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.successMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <button type="Submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="" role="button">Cancel</a>
+            </div>
+        </div>
+</form>

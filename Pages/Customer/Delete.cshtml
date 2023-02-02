@@ -1,0 +1,30 @@
+﻿@page
+@using System.Data.SqlClient; 
+@{
+
+    try
+    {
+        String cus_id = Request.Query["ID"];
+
+        String connectionString = "Data Source=LAPTOP-V0AH6EGV\\SQLEXPRESS;Initial Catalog=Bathworld;Integrated Security=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "delete from customer where cus_id = @cus_id;";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@cus_id", cus_id);
+
+                command.ExecuteNonQuery();
+
+
+
+            }
+        }
+    }
+
+    catch (Exception ex)
+    {
+    }
+    Response.Redirect("/Customer/Index");
+}
